@@ -1,6 +1,34 @@
 ---
-name: urufu-agent-play
-description: Use when building, documenting, or operating AI agents (Hermes, OpenClaw, Cursor bots) that play urufu gēmu on Base — read portfolio, gasless mint/claim/swap, meadow WebSocket, and indexer stats. Triggers on agent play urufu, hermes urufu, clawdbot mint, agent claim URU, urufu MCP, agent meadow.
+name: urufu-agent
+description: Play urufu gēmu on Base with your AI agent — check portfolio, claim yield, gasless mint. Your wallet, your RPC. Triggers on urufu steward, claim URU, mint chibi, agent play urufu.
+version: 1.0.0
+metadata:
+  openclaw:
+    requires:
+      env:
+        - URUFU_WALLET
+        - URUFU_RPC_URL
+      bins:
+        - node
+    primaryEnv: URUFU_WALLET
+    envVars:
+      - name: URUFU_WALLET
+        required: true
+        description: Base wallet address the agent acts for (0x…).
+      - name: URUFU_PRIVATE_KEY
+        required: false
+        description: Session key for claim/mint signing — hot wallet ok, not main seed.
+      - name: URUFU_RPC_URL
+        required: true
+        description: Your Base mainnet RPC URL (Alchemy, QuickNode, etc.).
+      - name: URUFU_INDEXER
+        required: false
+        description: Indexer URL (default https://neochibi-api.radbro.xyz).
+      - name: URUFU_SITE_URL
+        required: false
+        description: Site URL for allowlists + gasless relay (default https://www.urufu.xyz).
+    emoji: "🐺"
+    homepage: https://github.com/urufu-labs/urufu-agent
 ---
 
 # Urufu Gēmu — Agent Play Skill
