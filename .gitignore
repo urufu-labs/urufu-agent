@@ -1,0 +1,9 @@
+node_modules/
+scripts/node_modules/
+scripts/dist/
+*.tgz
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
